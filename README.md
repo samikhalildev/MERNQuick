@@ -17,7 +17,7 @@ In traditional web applications, the server usually renders the web page dependi
 In SPAs the whole application lives on a single web page that is sent from the server once I.e. the client only gets one HTML page from the server.
 
 React is where the magic of SPAs happens. We create components of UI's and render them on the page depending on the URL route.
-When the state of our app changes, React listens for these changes and is able to change the data on the page without interacting with the DOM API itself.
+When the state of our app changes, React listens for these changes and changes the data on the page without interacting with the DOM API itself.
 
 # Installation
 Make sure you have [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/) installed. 

@@ -52,23 +52,6 @@ if (localStorage.jwtToken) {
     store.dispatch(setCurrentUser(decoded));
 }
 
-
-/*
-Redux steps:
-    1. Create a provider here
-    2. Create a store in store.js
-    3. Create reducers and combine all reducers
-    4. Create types
-    5. Create actions for each reducer
-
-In Components:
-    1. Import actions
-    2. Export actions
-    3. this.props.action
-    4. map state to props using mapStateToProps()
-    5. add PropTypes to props
- */
-
 class App extends Component {
     render() {
         return (

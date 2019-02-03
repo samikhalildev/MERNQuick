@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
     port: process.env.PORT || 5000,
     database: DB_URI,
-    secretKey: '#$k92jf2FL@$22'
+    secretOrKey: '#$k92jf2FL@$22'
 }
 
 

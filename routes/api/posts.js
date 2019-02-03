@@ -11,6 +11,8 @@ const User = require('../../models/User');
 const Profile = require('../../models/Profile');
 const Post = require('../../models/Post');
 
+
+
 /*  @route      GET api/posts/
     @desc       gets post data
     @access     Public
@@ -28,10 +30,10 @@ router.get('/test', (req, res) => {
     @access     Public
  */
 router.get('/', (req, res) => {
-   Post.find()
-       .sort({ date: -1 })
-       .then(posts => res.json(posts))
-       .catch(err => res.status(404).json({ nopostsfound: 'No posts found' }));
+    Post.find()
+        .sort({ date: -1 })
+        .then(posts => res.json(posts))
+        .catch(err => res.status(404).json({ nopostsfound: 'No posts found' }));
 });
 
 

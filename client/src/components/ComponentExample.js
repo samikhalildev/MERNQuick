@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
 
-// Redux
+// React and redux modules
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
-// WithRouter is used to redirect to another page by passing history to the action creator
 import { Link, withRouter } from 'react-router-dom';
 
-// CSS
 import './styles/main.css';
 
-// Actions
+// Import actions here...
 import { getCurrentProfile } from "../actions/profileActions";
 
 
-
-class Dashboard extends Component {
+// Custom react component/class
+class ComponentExample extends Component {
 
     // Gets called before the component renders
     componentDidMount() {
@@ -34,7 +31,7 @@ class Dashboard extends Component {
 
 
 // Assign prop types to props being used
-Dashboard.propTypes = {
+ComponentExample.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     profile: PropTypes.object.isRequired
@@ -47,5 +44,5 @@ const mapStateToProps = (state) => ({
 });
 
 
-// Connect actions to use within redux
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+// Connect actions to use within redux and export component
+export default connect(mapStateToProps, { getCurrentProfile })(ComponentExample);

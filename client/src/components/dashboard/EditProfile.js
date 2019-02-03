@@ -14,7 +14,7 @@ import SocialMediaInput from '../layout/SocialMediaInput';
 
 // import the action that you want to use below...
 import { createProfile, getCurrentProfile } from "../../actions/profileActions";
-import isEmpty from '../../validation/is-empty';
+import isEmpty from '../../utils/is-empty';
 
 class EditProfile extends Component {
 
@@ -28,7 +28,7 @@ class EditProfile extends Component {
             location: '',
             status: '',
             skills: '',
-            githubUsername: '',
+            githubusername: '',
             bio: '',
             twitter: '',
             facebook: '',
@@ -61,7 +61,7 @@ class EditProfile extends Component {
             profile.website = !isEmpty(profile.website) ? profile.website : '';
             profile.location = !isEmpty(profile.location) ? profile.location : '';
             profile.status = !isEmpty(profile.status) ? profile.status : '';
-            profile.githubUsername = !isEmpty(profile.githubUsername) ? profile.githubUsername : '';
+            profile.githubusername = !isEmpty(profile.githubusername) ? profile.githubusername : '';
             profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
 
             profile.social = !isEmpty(profile.social) ? profile.social : {};
@@ -74,12 +74,12 @@ class EditProfile extends Component {
             //Set component fields state
             this.setState({
                 handle: profile.handle,
-                school: profile.company,
+                company: profile.company,
                 website: profile.website,
-                fieldOfStudy: profile.location,
+                location: profile.location,
                 status: profile.status,
                 skills: skillsCSV,
-                githubUsername: profile.githubUsername,
+                githubusername: profile.githubusername,
                 bio: profile.bio,
                 twitter: profile.twitter,
                 facebook: profile.facebook,
@@ -96,12 +96,12 @@ class EditProfile extends Component {
 
         const profileData = {
             handle: this.state.handle,
-            school: this.state.company,
+            company: this.state.company,
             website: this.state.website,
-            fieldOfStudy: this.state.location,
+            location: this.state.location,
             status: this.state.status,
             skills: this.state.skills,
-            githubUsername: this.state.githubUsername,
+            githubusername: this.state.githubusername,
             bio: this.state.bio,
             twitter: this.state.twitter,
             youtube: this.state.youtube,
@@ -223,7 +223,7 @@ class EditProfile extends Component {
                                     name="company"
                                     value={this.state.company}
                                     onChange={this.onChange}
-                                    error={errors.school}
+                                    error={errors.company}
                                     info="Could be your own company or one you work for."
                                 />
 
@@ -241,7 +241,7 @@ class EditProfile extends Component {
                                     name="location"
                                     value={this.state.location}
                                     onChange={this.onChange}
-                                    error={errors.fieldOfStudy}
+                                    error={errors.location}
                                     info="City or state"
                                 />
 
@@ -257,9 +257,9 @@ class EditProfile extends Component {
                                 <TextFieldGroup
                                     placeholder="Github username"
                                     name="githubUsername"
-                                    value={this.state.githubUsername}
+                                    value={this.state.githubusername}
                                     onChange={this.onChange}
-                                    error={errors.githubUsername}
+                                    error={errors.githubusername}
                                     info="If you want your latest repos and a Github link, include your username"
                                 />
 

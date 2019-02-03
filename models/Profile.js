@@ -12,7 +12,7 @@ const ProfileSchema = new Schema({
 
     handle: {
         type: String,
-        requird: true,
+        required: true,
         max: 40
     },
 
@@ -42,23 +42,23 @@ const ProfileSchema = new Schema({
         type: String
     },
 
-    githubUsername: {
+    githubusername: {
         type: String
     },
 
     experience: [
         {
-            title: {
+            degree: {
                 type: String,
                 required: true
             },
 
-            company: {
+            school: {
                 type: String,
                 required: true
             },
 
-            location: {
+            fieldofstudy: {
                 type: String
             },
 

@@ -51,7 +51,7 @@ class CreateProfile extends Component {
 
         const profileData = {
             handle: this.state.handle,
-            school: this.state.company,
+            company: this.state.company,
             website: this.state.website,
             location: this.state.location,
             status: this.state.status,
@@ -178,7 +178,7 @@ class CreateProfile extends Component {
                                     name="company"
                                     value={this.state.company}
                                     onChange={this.onChange}
-                                    error={errors.school}
+                                    error={errors.company}
                                     info="Could be your own company or one you work for."
                                 />
 

@@ -133,7 +133,7 @@ Register.propTypes = {
 };
 
 
-// mapping state to props, state.auth comes from the rootreducer
+// mapping state to props, state.account comes from the rootreducer
 const mapStateToProps = (state) => ({
     auth: state.auth,
     errors: state.errors

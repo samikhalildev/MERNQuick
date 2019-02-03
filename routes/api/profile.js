@@ -147,10 +147,10 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     if(req.body.handle) profileFields.handle = req.body.handle;
     if(req.body.company) profileFields.company = req.body.company;
     if(req.body.website) profileFields.website = req.body.website;
-    if(req.body.location) locationprofileFields.location = req.body.location;
+    if(req.body.location) profileFields.location = req.body.location;
     if(req.body.bio) profileFields.bio = req.body.bio;
     if(req.body.status) profileFields.status = req.body.status;
-    if(req.body.githubUsername) profileFields.githubUsername = req.body.githubUsername;
+    if(req.body.githubusername) profileFields.githubusername = req.body.githubusername;
 
     // Skills
     if(typeof req.body.skills !== 'undefined') {
@@ -214,9 +214,9 @@ router.post("/experience", passport.authenticate('jwt', { session: false }), (re
     Profile.findOne({ user: req.user.id })
         .then(profile => {
             const newExperience = {
-                title: req.body.title,
-                company: req.body.company,
-                location: req.body.location,
+                degree: req.body.title,
+                school: req.body.school,
+                fieldofstudy: req.body.fieldofstudy,
                 from: req.body.from,
                 to: req.body.to,
                 current: req.body.current,
@@ -281,7 +281,7 @@ router.post("/education", passport.authenticate('jwt', { session: false }), (req
             const newEducation = {
                 school: req.body.school,
                 degree: req.body.degree,
-                fieldOfStudy: req.body.fieldOfStudy,
+                fieldofstudy: req.body.fieldofstudy,
                 from: req.body.from,
                 to: req.body.to,
                 current: req.body.current,

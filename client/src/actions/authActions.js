@@ -2,19 +2,20 @@ import axios from 'axios';
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from 'jwt-decode';
 
-// Action types for authentication
+// Action types
 import { SET_CURRENT_USER } from "./types";
 import { GET_ERRORS } from "./types";
 
 
-// Actions gets called from the components as props which they call reducers to change the state of the data
+// Actions gets called from component props which they call reducers to change the state of the data
+
 
 // Register
 export const registerUser = (userData, history) => dispatch => {
 
     axios
         .post('/api/users/register', userData)
-        .then(res => history.push('/login')) // if success, redirect to the login page
+        .then(res => history.push('/login')) // if success, redirect to the account page
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,
@@ -27,7 +28,7 @@ export const registerUser = (userData, history) => dispatch => {
 // Login - Get User Token
 export const loginUser = (userData) => dispatch => {
     axios
-        .post('/api/users/login', userData)
+        .post('/api/users/account', userData)
         .then(res => {
 
             // Once we get the response back, save to LocalStorage
@@ -72,7 +73,7 @@ export const logoutUser = () => dispatch => {
     // Remove token from localStorage
     localStorage.removeItem('jwtToken');
 
-    // Remove auth header for future requests
+    // Remove account header for future requests
     setAuthToken(false);
 
     // Set current user to {} which will set isAuthenticate to false

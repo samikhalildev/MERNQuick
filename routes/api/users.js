@@ -13,10 +13,7 @@ const User = require('../../models/User');
 
 
 
-// Status code:
-// 202 = OK
-// 400 = user error
-// 404 = page not found
+// Status code: 202 = OK, 400 = user error, 404 = not found
 
 /*  @route      GET api/users/
     @desc       gets user data
@@ -51,7 +48,7 @@ router.post('/register', (req, res) => {
 
             if (user) {
                 errors.email = 'Email already exists';
-               return res.status(400).json(errors);
+                return res.status(400).json(errors);
 
             } else {
                 const avatar = gravatar.url(req.body.email, {
@@ -90,12 +87,12 @@ router.post('/register', (req, res) => {
 // LOGIN
 
 
-/*  @route      GET api/users/login
+/*  @route      GET api/users/account
     @desc       Login user/returning jwt token
     @access     Public
  */
 
-router.post('/login', (req, res) => {
+router.post('/account', (req, res) => {
 
     const { errors, isValid } = validateLoginInput(req.body);
 
@@ -121,21 +118,23 @@ router.post('/login', (req, res) => {
                     // User matched
                     if(isMatch) {
 
-                       // Create JWT payload
-                       const payload = { id: user.id, name: user.name, avatar: user.avatar };
+                        // Create JWT payload
+                        const payload = { id: user.id, name: user.name, avatar: user.avatar };
 
-                       // Create Token
-                       jwt.sign(payload, keys.secretKey, { expiresIn: 5000 }, (err, token) => {
-                           res.json({
-                              success: true,
-                              token: 'Bearer ' + token
-                           });
-                       });
+                        // Create Token
+                        jwt.sign(payload, keys.secretOrKey, (err, token) => {
+                            if(err) throw err;
 
-                   } else {
+                            res.json({
+                                success: true,
+                                token: 'Bearer ' + token
+                            });
+                        });
+
+                    } else {
                         errors.password = 'Password incorrect';
                         return res.status(404).json(errors);
-                   }
+                    }
 
                 });
         });

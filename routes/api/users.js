@@ -3,7 +3,7 @@ const router = express.Router();
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const keys = require('../../config/keys');
+const keys = require('../../config/config');
 const passport = require('passport');
 
 const validateRegisterInput = require('../../validation/register');
@@ -13,7 +13,10 @@ const User = require('../../models/User');
 
 
 
-// Status code: 202 = OK, 400 = user error, 404 = not found
+// Status code:
+// 202 = OK
+// 400 = user error
+// 404 = page not found
 
 /*  @route      GET api/users/
     @desc       gets user data

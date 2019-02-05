@@ -17,10 +17,9 @@ In traditional web applications, the server usually renders the web page dependi
 In SPAs the whole application lives on a single web page that is sent from the server once I.e. the client only gets one HTML page from the server.
 
 ## React
-React is where the magic of SPAs happens. React allows us to create components of UI's and render them on the page depending on the URL route.
+React is where the magic of SPAs happen. React allows us to create components of UI's and render them on the page depending on the URL route.
 
-#### Components: 
-A component is a React class that renders HTML. When the state changes, React listens for these changes and will automatically update the DOM. 
+A component is a React class that renders HTML. When the state changes, React listens for these changes and automatically updates the DOM. 
 
 App.js is the meeting place for all React components.
 

@@ -33,27 +33,27 @@ App.js is the meeting place for all React components.
 # Installation
 Make sure you have [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/) installed. 
 
-- Clone this project: 
+1. Clone this project: 
     ```sh 
     git clone https://github.com/samikhalildev/MERNQuick.git 
     ``` 
-- Rename directory to your app name: 
+2. Rename directory to your app name: 
     ```sh 
     mv MERNQuick my-app 
     ``` 
-- Navigate into the directory: 
+3. Navigate into the directory: 
     ```sh 
     cd MERNQuick 
     ``` 
-- Install all Node dependencies: 
+4. Install all Node dependencies: 
     ```sh 
     npm install 
     ``` 
-- Install all React dependencies: 
+5. Install all React dependencies: 
     ```sh 
     npm run client-install 
     ``` 
-- Run client and server concurrently: 
+6. Run client and server concurrently: 
     ```sh 
     npm run dev 
     ```

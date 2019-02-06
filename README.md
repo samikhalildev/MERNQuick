@@ -16,19 +16,6 @@ MERN is one of the most popular stack for Single Page Applications (SPAs).
 In traditional web applications, the server usually renders the web page depending on the web request.
 In SPAs the whole application lives on a single web page that is sent from the server once I.e. the client only gets one HTML page from the server.
 
-## React
-React is where the magic of SPAs happen. React allows us to create components of UI's and render them on the page depending on the URL route.
-
-A component is a React class that renders HTML. When the state changes, React listens for these changes and automatically updates the DOM. 
-
-App.js is the meeting place for all React components.
-
-
-#### There are two ways of using data in React:
-- State: managed within the component (similar to variables declared inside a function). Use state when data needs to dynamic.
-- Props: short for properties, passed to a component (similar to a function parameter). Use props when data doesn't need to be dynamic.
-
-
 # Installation
 Make sure you have [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/) installed. 
 

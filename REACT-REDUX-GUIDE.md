@@ -1,3 +1,9 @@
+## Single Page Applications (SPAs)
+MERN is one of the most popular stack for Single Page Applications (SPAs). 
+
+In traditional web applications, the server usually renders the web page depending on the web request.
+In SPAs the whole application lives on a single web page that is sent from the server once I.e. the client only gets one HTML page from the server.
+
 ## React
 React is where the magic of SPAs happen. React allows us to create components of UI's and render them on the page depending on the URL route, similar to how traditional web servers render HTML but instead on the client.
 

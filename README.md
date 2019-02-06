@@ -10,12 +10,6 @@ MERN consists of 4 popular technologies:
 - React/Redux: A front end framework/library that provides a dynamic and interactive user interfaces
 - NodeJS: A serverside JavaScript language for the server
 
-## Single Page Applications (SPAs)
-MERN is one of the most popular stack for Single Page Applications (SPAs). 
-
-In traditional web applications, the server usually renders the web page depending on the web request.
-In SPAs the whole application lives on a single web page that is sent from the server once I.e. the client only gets one HTML page from the server.
-
 # Installation
 Make sure you have [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/) installed. 
 

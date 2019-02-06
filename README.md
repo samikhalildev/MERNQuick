@@ -6,7 +6,7 @@ This project gives you a head start on building your next big idea. It has a com
 ## The MERN stack
 MERN consists of 4 popular technologies: 
 - MongoDB: A NoSQL database used to store data as a JSON document
-- Express: A serverside framework on top of NodeJS for handling routing of http requests
+- Express: A serverside framework on top of NodeJS for handling HTTP requests
 - React/Redux: A front end framework/library that provides a dynamic and interactive user interfaces
 - NodeJS: A serverside JavaScript language for the server
 

@@ -143,7 +143,7 @@ class Profile extends Component {
     export default connect(mapStateToProps, { getProfile })(Profile);
 ```
 
-7. Final step, calling the action creator getProfile and using the profile state in our props:
+7. Final step, calling the action creator getProfile() and using the profile state from our props:
 
 ```js
     componentDidMount() {    

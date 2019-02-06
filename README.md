@@ -39,6 +39,6 @@ Make sure you have [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mo
     ```sh 
     npm run dev 
     ```
-# Questions
-Email me sami.khalil.dev@gmail.com
+# Contact
+sami.khalil.dev@gmail.com
 

@@ -10,6 +10,8 @@ MERN consists of 4 popular technologies:
 - React/Redux: A front end framework/library that provides a dynamic and interactive user interfaces
 - NodeJS: A serverside JavaScript language for the server
 
+I have written a simple to understand guide about SPAs, React and Redux explaining their purpose, how they work with some code examples. [Read here.](REACT-REDUX-GUIDE.md)
+
 # Installation
 Make sure you have [NodeJS](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/) installed. 
 

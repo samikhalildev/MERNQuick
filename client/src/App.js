@@ -1,13 +1,7 @@
-
 import React, { Component } from 'react';
 
 // React Router
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -22,8 +16,7 @@ import setAuthToken from './utils/setAuthToken';
 
 // Actions
 import { logoutUser, setCurrentUser } from './actions/authActions';
-import { clearProfile } from "./actions/profileActions";
-
+import { clearProfile } from './actions/profileActions';
 
 // Components
 import PrivateRoute from './components/layout/PrivateRoute';
@@ -37,53 +30,57 @@ import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/dashboard/CreateProfile';
 import EditProfile from './components/dashboard/EditProfile';
 
-
-
 // Check for token
 if (localStorage.jwtToken) {
+  // Set account token header
+  setAuthToken(localStorage.jwtToken);
 
-    // Set account token header
-    setAuthToken(localStorage.jwtToken);
+  // Decode token and get user info and expiration
+  const decoded = jwt_decode(localStorage.jwtToken);
 
-    // Decode token and get user info and expiration
-    const decoded = jwt_decode(localStorage.jwtToken);
-
-    // Set user and isAuthenticate
-    store.dispatch(setCurrentUser(decoded));
+  // Set user and isAuthenticate
+  store.dispatch(setCurrentUser(decoded));
 }
 
 class App extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Router>
-                    <div className="App">
-                        <Navbar/>
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <div className='App'>
+            <Navbar />
 
-                        <Route exact path="/" component={Landing} />
+            <Route exact path='/' component={Landing} />
 
-                        <div className="container">
-                            <Route exact path="/login" component={Login} />
-                            <Route exact path="/register" component={Register} />
+            <div className='container'>
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/register' component={Register} />
 
-                            <Switch>
-                                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                            </Switch>
+              <Switch>
+                <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              </Switch>
 
-                            <Switch>
-                                <PrivateRoute exact path="/create-profile" component={CreateProfile} />
-                            </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path='/create-profile'
+                  component={CreateProfile}
+                />
+              </Switch>
 
-                            <Switch>
-                                <PrivateRoute exact path="/edit-profile" component={EditProfile} />
-                            </Switch>
-
-                        </div>
-                    </div>
-                </Router>
-            </Provider>
-        );
-    }
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path='/edit-profile'
+                  component={EditProfile}
+                />
+              </Switch>
+            </div>
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
 }
 
 export default App;
